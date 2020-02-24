@@ -1,0 +1,37 @@
+.clients{
+    &__title{
+        margin-bottom: 32px;
+        @include xl{
+            margin-bottom: 40px;
+        }
+        &__heading{
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+    &__grid{
+        &__child{
+            text-align: center;
+            margin-bottom: 12px;
+            @include xl{
+                margin-bottom: 26px;
+            }
+            @include xxl{
+                margin-bottom: 32px;
+            }
+            @include xxxl{
+                margin-bottom: 40px;
+            }
+        }
+    }
+    &__logo{
+        width: calc(100% - 15px);
+        max-width: 90px;
+        @include msm{
+            max-width: 100px;
+        }
+        @include lg{
+            max-width: 120px;
+        }
+    }
+}

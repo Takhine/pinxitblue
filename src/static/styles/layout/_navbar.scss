@@ -1,0 +1,119 @@
+#navbar{
+    .MuiToolbar-gutters{
+        padding: 0;
+    }
+    @extend .container;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: $primary-blue;
+    font-weight: $bold-font;
+    .logo-container{
+        &:hover{
+            background-color: transparent;
+        }
+        .logo{
+            height: auto;
+            width: 140px;
+            @include xl{
+                width: 160px;
+            }
+            @include xxl{
+                width: 180px;
+            }
+            @include xxxl{
+                width: 300px;
+            }
+        }
+    }
+    .grow{
+        display: flex;
+        flex-grow: 1;
+    }
+    .menu-button{
+        .MuiSvgIcon-root{
+            font-size: 1.8rem;
+        }
+    }
+    .section-desktop{
+        display: none;
+        @include lg{
+            display: block;
+        }
+        .nav-menu{
+            list-style: none;
+            display: flex;
+            li{
+                display: inline;
+                padding-left: 20px;
+                cursor: pointer;
+                button{
+                    text-transform: uppercase;
+                    font-weight: $bolder-font;
+                    color: $secondary-blue;
+                    @include xl{
+                        font-size: $default-font;
+                    }
+                    @include xxxl{
+                    font-size: $title-font;
+                    }
+                &:hover{
+                    background-color: transparent;
+                }
+                }
+                a{
+                    text-decoration: none;
+                }
+                 #download-button{
+                    @include primary-button;
+                    text-transform: capitalize;
+                    background-color: $secondary-blue;
+                    font-weight: $regular-font;
+                }
+            }
+        }
+    }
+    .mobile-button{
+        @include primary-button;
+        box-shadow: $light-box-shadow;
+        background-color: $dark-blue;
+        margin-right: 5px;
+        @include rwd(250,599){
+            display: none;
+        }
+        display: block;
+        text-transform: uppercase;
+        @include lg{
+            display: none;
+        }
+    }
+}
+.menu-drawer{
+    .MuiPaper-root.MuiDrawer-paper{
+        width: 250px;
+        padding: 32px 24px;
+        .nav-menu{
+            li{
+                display: block; 
+                margin: 16px 0;
+                button{
+                    text-transform: uppercase;
+                    color: $secondary-blue;
+                    font-weight: $bolder-font;
+                    &:hover{
+                        background-color: none;
+                    }
+                }
+            }
+            a{
+                text-decoration: none;
+            }
+            #download-button{
+                @include primary-button;
+                text-transform: capitalize;
+                background-color: $secondary-blue;
+                font-weight: $regular-font;
+
+            }
+        }
+    }
+}

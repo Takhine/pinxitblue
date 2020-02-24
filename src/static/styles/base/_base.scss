@@ -1,0 +1,64 @@
+*,body,html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $main-font;
+}
+
+hr{
+    border: .5px solid white;
+    margin: 24px 0;
+}
+.container{
+    padding:60px 18px;
+    @include mmd{
+        padding:60px 80px;
+    }
+    @include xl{
+        padding:60px 120px;
+
+    }
+}
+
+button{
+    z-index: 3;
+    position: relative;
+}
+.desktop{
+    display: none;
+    @include lg{
+        display: block;
+    }
+}
+.mobile{
+    display: block;
+    @include lg{
+        display: none;
+    }
+}
+
+
+// GOOGLE TRANSLATE
+
+.goog-te-banner-frame.skiptranslate {display: none!important;} 
+
+
+.goog-te-gadget-simple{
+    color: white;
+    border-radius: 4px;
+    padding: 5px 10px;
+    display: block;
+    border: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: 0.4s;
+    margin: auto;
+    z-index: 3;
+    width: fit-content;
+    position: relative;
+    @include msm{
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: unset;
+    }
+}

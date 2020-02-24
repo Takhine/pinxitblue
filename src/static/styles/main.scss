@@ -1,0 +1,14 @@
+@import './utilities/variables';
+@import './utilities/colors';
+@import './utilities/breakpoints';
+@import './utilities/mixins';
+
+@import './base/base';
+
+@import './pages/home/header';
+@import './pages/home/client';
+
+
+@import './layout/navbar';
+@import './layout/footer';
+

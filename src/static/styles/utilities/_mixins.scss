@@ -1,0 +1,133 @@
+// The smallest of the smallest of devices
+@mixin xxs {
+    @media (max-width:#{$screen-xs-min}) {
+     @content;   
+    }
+}
+// Extra Small devices
+@mixin xs {
+    @media (min-width: #{$screen-xs-min}) {
+        @content;
+    }
+ }
+// Small devices
+@mixin sm {
+    @media (min-width: #{$screen-sm-min}) {
+        @content;
+    }
+ }
+ // Medium devices
+ @mixin md {
+    @media (min-width: #{$screen-md-min}) {
+        @content;
+    }
+ }
+ 
+ // Large devices
+ @mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+ }
+ 
+ // Extra large devices
+ @mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+ }
+ 
+ @mixin xxl {
+    @media (min-width: #{$screen-xxl-min}) {
+        @content;
+    }
+ }
+
+ @mixin xxxl {
+    @media (min-width: #{$screen-xxxl-min}) {
+        @content;
+    }
+ }
+// Custom devices + Mui
+@mixin rwd($screen-min,$screen-max) {
+    @media (min-width: $screen-min+'px')and (max-width:$screen-max+'px') {
+        @content;
+    }
+ }
+ @mixin mlg{
+    @media (min-width: #{$mui-screen-lg-min}){
+        @content;
+    }
+}
+ @mixin mmd{
+     @media (min-width: #{$mui-screen-md-min}){
+         @content;
+     }
+ }
+ @mixin msm {
+     @media (min-width: #{$mui-screen-sm-min}){
+         @content;
+     }
+ }
+
+//  Buttons
+
+@mixin  primary-button {
+    color: white;
+    background-color: $primary-blue;
+    box-shadow: $main-box-shadow;
+    border-radius: 4px;
+    padding: 5px 10px;
+    display: block;
+    border: none;
+    cursor: pointer;
+    transition: $transition-main;
+
+    &:hover{
+        color: $primary-blue;
+        background-color: white;
+        border: 1px solid $primary-blue;
+        transition: $transition-main;
+    }
+}
+@mixin  secondary-button {
+    color: white;
+    background-color: transparent;
+    border: 2px solid #6C63FF;
+    border-radius: 16px;
+    width: 80px;
+    height: 25px;
+    display: block;
+}
+@mixin dark-button{
+    color: white;
+    background-color: $dark-blue;
+    border-radius: 4px;
+    padding: 5px 10px;
+    display: block;
+    border: none;
+    cursor: pointer;
+    transition: $transition-main;
+
+    &:hover{
+        color: $dark-blue;
+        background-color: transparent;
+        border: 1px solid $dark-blue;
+        transition: $transition-main;
+    }
+}
+
+// Cards
+
+@mixin primary-card {
+    background-color: transparent;
+    color: white;
+    border-radius: 12px;
+    border: 1px solid white;
+}
+
+@mixin secondary-card {
+    background-color: white;
+    color: $dark-black;
+    border-radius: 4px;
+}
