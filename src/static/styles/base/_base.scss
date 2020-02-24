@@ -62,3 +62,13 @@ button{
         width: unset;
     }
 }
+
+
+// Youtube
+.react-player__shadow, .react-player__play-icon{
+    display: none !important;
+}
+.ytp-button{
+    display: none !important;
+    opacity: 0 !important;
+}

@@ -2,20 +2,20 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 
 // Client images import
-import c1 from 'static/images/01.png';
-import c2 from 'static/images/02.png';
-import c3 from 'static/images/03.png';
-import c4 from 'static/images/04.png';
-import c5 from 'static/images/05.png';
-import c6 from 'static/images/06.png';
-import c7 from 'static/images/07.png';
-import c8 from 'static/images/08.png';
-import c9 from 'static/images/09.png';
-import c10 from 'static/images/10.png';
-import c11 from 'static/images/11.png';
-import c12 from 'static/images/12.png';
-import c13 from 'static/images/13.png';
-import c14 from 'static/images/14.png';
+import c1 from 'static/images/logos/01.png';
+import c2 from 'static/images/logos/02.png';
+import c3 from 'static/images/logos/03.png';
+import c4 from 'static/images/logos/04.png';
+import c5 from 'static/images/logos/05.png';
+import c6 from 'static/images/logos/06.png';
+import c7 from 'static/images/logos/07.png';
+import c8 from 'static/images/logos/08.png';
+import c9 from 'static/images/logos/09.png';
+import c10 from 'static/images/logos/10.png';
+import c11 from 'static/images/logos/11.png';
+import c12 from 'static/images/logos/12.png';
+import c13 from 'static/images/logos/13.png';
+import c14 from 'static/images/logos/14.png';
 
 const clients = [
     {

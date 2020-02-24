@@ -1,0 +1,58 @@
+.message{
+    position: relative;
+    height: 300px;
+    @include md{
+        height: 350px;
+    }
+    @include lg{
+        height: 400px;
+    }
+    @include xl{
+        height: 500px;
+    }
+    @include mlg{
+        height: 550px;
+    }
+    @include xxl{
+        height: 800px;
+    }
+    @include xxxl{
+        height: 1080px;
+    }
+    &__background{
+        width: 100%;
+        position:absolute;
+        top: 0;
+        height: inherit;
+    }
+    &__container{
+        @include md{
+            width: 50%;
+        }
+        position: relative;
+        background: rgba(243, 149, 33, 0.68);
+        margin-left: auto;
+        height: 100%;
+    }
+    &__content{
+        font-weight: 300;
+        font-size: $default-font;
+        margin: auto;
+        position: relative;
+        top: 20%;
+        text-align: center;
+        color: white;
+        max-width: 450px;
+        padding: 12px;
+        @include md{
+            max-width: 600px;
+            font-size: $title-font;
+        }
+        @include xxl{
+            font-size: $large-font;
+            max-width: 650px;
+
+        }
+    }
+    
+}
