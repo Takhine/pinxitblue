@@ -1,0 +1,95 @@
+.footer{
+    background-color: $primary-black;
+    color: white;
+    .footer &__grid{
+        max-width: 850px;
+        width: 100%;
+        margin: auto;
+    }
+    &__column{
+        &__title{
+            text-transform: uppercase;
+            font-weight: 300    ;
+            font-size: $default-font;
+            margin-bottom: 12px;
+            text-align: center;
+            @include md{
+                font-size: $title-font;
+            }
+            @include mmd{
+                text-align: unset;
+            }
+        }
+        &__content{
+            font-weight: 300;
+            display: block;
+            font-size: $small-font;
+            text-align: center;
+            max-width: 300px;
+            margin: auto;
+            @include mmd{
+                text-align: unset;
+                max-width: unset;
+                margin: unset;
+            }
+        }
+        &.copyright{
+            margin: auto;
+            @include mlg{
+                margin: unset;
+            }
+        }
+    }
+    &__bottom{
+        flex-direction: column-reverse;
+        margin-top: 24px !important;
+        @include mlg{
+            flex-direction: row;
+        }
+    }
+    &__content{
+        margin-bottom: 6px;
+        text-decoration: none;
+        color: white;
+        &__city{
+            margin-bottom: 4px;    
+            display: block;   
+        }
+    }
+    &__menu{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        text-align: center;
+        @include msm{
+            flex-direction: row;
+            text-align: unset;
+        }
+        &__item{
+            margin-bottom: 6px;
+        }
+    }
+    &__social{
+        display: flex;
+        justify-content: space-around;
+        max-width: 120px;
+        margin-left: unset;
+        margin: auto;
+        @include mlg{
+            margin: unset;
+            margin-left: auto;
+        }
+        &__link{
+
+        }
+        &__logo{
+            width: auto;
+            height: 25px;
+            &.twitter{
+                height: 24px;
+                width: 28px;
+            }
+        }
+    }
+}   

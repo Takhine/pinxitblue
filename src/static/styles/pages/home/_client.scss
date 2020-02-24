@@ -7,6 +7,10 @@
         &__heading{
             text-align: center;
             text-transform: uppercase;
+            font-size: $default-font;
+            @include md{
+                font-size: $large-font;
+            }
         }
     }
     &__grid{

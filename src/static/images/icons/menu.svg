@@ -1,3 +1,10 @@
-<svg id="Menu" xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14">
-  <path id="Menu-2" data-name="Menu" d="M-6159,14a1,1,0,0,1-1-1,1,1,0,0,1,1-1h8a1,1,0,0,1,1,1,1,1,0,0,1-1,1Zm0-6a1,1,0,0,1-1-1,1,1,0,0,1,1-1h14a1,1,0,0,1,1,1,1,1,0,0,1-1,1Zm0-6a1,1,0,0,1-1-1,1,1,0,0,1,1-1h14a1,1,0,0,1,1,1,1,1,0,0,1-1,1Z" transform="translate(6160)" fill="#1271de"/>
+<svg id="Menu" xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #000c16;
+      }
+    </style>
+  </defs>
+  <path id="Menu-2" data-name="Menu" class="cls-1" d="M0,17V14.571H12.5V17ZM0,9.715V7.285H20V9.715ZM0,2.429V0H20V2.429Z"/>
 </svg>

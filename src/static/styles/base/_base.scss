@@ -72,3 +72,11 @@ button{
     display: none !important;
     opacity: 0 !important;
 }
+.react-player__preview{
+    opacity: 1;
+    transition: $transition-main;
+    &:hover{
+        transition: $transition-main;
+        opacity: 0.8;
+    }
+}
