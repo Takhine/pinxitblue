@@ -3,17 +3,23 @@
         padding: 0;
     }
     @extend .container;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
     color: $primary-blue;
     font-weight: $bold-font;
+    @include msm{
+        padding-top: 20px;
+    }
     .logo-container{
         &:hover{
             background-color: transparent;
         }
         .logo{
             height: auto;
-            width: 140px;
+            width: 90px;
+            @include mmd{
+                width: 120px;
+            }
             @include xl{
                 width: 160px;
             }
@@ -32,6 +38,18 @@
     .menu-button{
         .MuiSvgIcon-root{
             font-size: 1.8rem;
+        }
+        img{
+            width: 20px;
+            @include msm{
+                width: 25px;
+            }
+            @include xxl{
+                width: 28px;
+            }
+            @include xxxl{
+                width: 32px;
+            }
         }
     }
     .section-desktop{

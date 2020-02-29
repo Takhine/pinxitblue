@@ -5,14 +5,14 @@
             &.slick-prev{
                 left: 20px;
                 &::before{
-                    color: #707070;
+                    content: url('../../../images/icons/back-arrow.svg');
                     font-size: 32px;
                 }
             }
             &.slick-next{
                 right: 30px;
                 &::before{
-                    color: #707070;
+                    content: url('../../../images/icons/front-arrow.svg');
                     font-size: 32px;
                 }
             }
@@ -29,6 +29,8 @@
     &__slider{
         &__slide{
             width: 100%;
+            margin-top: -2px;
+            margin-left: -1px;
         }
     }
     &__overlay{
@@ -38,8 +40,9 @@
         width: 50%;
         height: inherit;
         top: -7px;
-        padding: 60px 120px;
+        @extend .container;
         position: absolute;
+        color: white;
         &.google-slide{
             color: #383330;
             .carousel__overlay__title{
@@ -59,7 +62,25 @@
             color: white;
         }
         &__title{
-            font-size: 24px;
+            font-size: $title-font;
+            font-weight: 500;
+            margin-bottom: 14px;
+            line-height: 20px;
+            margin-top: 40px;
+            @include msm{
+                margin-top: 45px;
+
+            }
+            @include mmd{
+                font-size: $large-font;
+                line-height: 30px;
+            }
+            @include xl{
+                font-size: $xlarge-font;
+                margin-bottom: 20px;
+                line-height: 40px;
+
+            }
             @include xxl{
                 max-width: 450px;
                 font-weight: 500;
@@ -72,6 +93,12 @@
             max-width: 455px;
             font-weight: 300;
             margin-bottom: 60px;
+            font-size: $small-font;
+            line-height: 16px;
+            @include mmd{
+                font-size: $default-font;
+                line-height: 20px;
+            }
         }
         &__client{
             font-weight: 400;
