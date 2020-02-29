@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {
     Toolbar,
     AppBar,
@@ -10,7 +10,9 @@ import {
 } from '@material-ui/core';
 
 import {NavLink} from 'react-router-dom';
-import logo from 'static/images/logo.png';
+import logoWhite from 'static/images/logo-white.svg';
+import logo from 'static/images/logo.svg';
+
 import menu from 'static/images/icons/menu.svg';
 const HideonScroll = (props) => {
     const { children, window } = props;
@@ -21,7 +23,7 @@ const HideonScroll = (props) => {
 
     const trigger2 = useScrollTrigger({
         disableHysteresis: true,
-        threshold: 0
+        threshold: 2
     });
 
 
@@ -32,42 +34,38 @@ const HideonScroll = (props) => {
     )
 }
 
-const NavMenu = (props) => {
-
-    return (
-        <ul className="nav-menu">
-            <li><NavLink exact to="/about"><Button  onClick={props.onClose}>About</Button></NavLink></li>
-            <li><NavLink exact to="/about"><Button  onClick={props.onClose}>Benefits</Button></NavLink></li>
-            <li><NavLink exact to="/contact"><Button  onClick={props.onClose}>Contact</Button></NavLink></li>
-            <li><NavLink exact to="/about"><Button  onClick={props.onClose}>Products</Button></NavLink></li>
-        </ul>
-    );
-}
 
 const Navbar = (props) => {
-    const [drawerOpen, setDrawerOpen] = useState(false);
 
-    const toggleDrawer = (open) => event => {
-        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-            return;
+    const [navBackground, setNavBackground] = useState(false)
+    const navRef = useRef()
+    navRef.current = navBackground
+    useEffect(() => {
+      const handleScroll = () => {
+        const show = window.scrollY > 60
+        if (navRef.current !== show) {
+          setNavBackground(show)
         }
-
-        setDrawerOpen(open);
-    };
-
+      }
+      document.addEventListener('scroll', handleScroll)
+      return () => {
+        document.removeEventListener('scroll', handleScroll)
+      }
+    }, [])
+    
     return (
         <HideonScroll {...props}>
             <AppBar
                 position="fixed"
-                style={{ backgroundColor: '#ffffff' }}
+                style={{ backgroundColor: `${navBackground ? 'white' : 'transparent'}`, transition:'1s ease' }}
                 id="navbar"
             >
                 <Toolbar>
 
-                    <NavLink exact to="/"><Button className="logo-container"><img className="logo" width="200" height="auto" src={logo} alt="Pinxitblue" /></Button></NavLink>
+                    <NavLink exact to="/"><Button className="logo-container"><img style={{transition:'1s ease'}} className="logo" width="200" height="auto" src={navBackground?logo:logoWhite} alt="Pinxitblue" /></Button></NavLink>
                     <div className="grow" />
-                    <IconButton onClick={toggleDrawer(true)} edge="start" className="menu-button" color="inherit" aria-label="menu">
-                    <img src={menu} alt="Menu Burger" />
+                    <IconButton edge="start" className="menu-button" color="inherit" aria-label="menu">
+                    <img src={menu} width="25" alt="Menu Burger" />
                 </IconButton>
 
                 </Toolbar>

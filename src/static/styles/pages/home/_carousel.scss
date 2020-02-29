@@ -17,10 +17,64 @@
                 }
             }
     }
+    .slick-slide{
+        div{
+            height: inherit;
+            .carousel__slider{
+                height: inherit;
+            }
+        }
+    }
 }
     &__slider{
         &__slide{
             width: 100%;
+        }
+    }
+    &__overlay{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+        height: inherit;
+        top: -7px;
+        padding: 60px 120px;
+        position: absolute;
+        &.google-slide{
+            color: #383330;
+            .carousel__overlay__title{
+                @include xxl{
+                    max-width: 430px;
+                }
+            }
+            .carousel__overlay__description{
+                max-width: 290px;
+            }
+        }
+        &.barclays-slide{
+            color: white;
+        }
+        &.bharat-petroleum-slide{
+            background-color: #00196485;
+            color: white;
+        }
+        &__title{
+            font-size: 24px;
+            @include xxl{
+                max-width: 450px;
+                font-weight: 500;
+                margin-bottom: 30px;
+                font-size: $xxlarge-font;
+                line-height: 50px;
+            }
+        }
+        &__description{
+            max-width: 455px;
+            font-weight: 300;
+            margin-bottom: 60px;
+        }
+        &__client{
+            font-weight: 400;
         }
     }
 }
