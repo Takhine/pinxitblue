@@ -8,7 +8,7 @@
     color: $primary-blue;
     font-weight: $bold-font;
     @include msm{
-        padding-top: 20px;
+        padding-top: 10px;
     }
     .logo-container{
         &:hover{

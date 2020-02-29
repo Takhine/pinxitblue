@@ -8,6 +8,9 @@ import {
 import facebook from 'static/images/icons/facebook.png';
 import linkedin from 'static/images/icons/linkedin.png';
 import twitter from 'static/images/icons/twitter.png';
+import instagram from 'static/images/icons/instagram.png';
+import youtube from 'static/images/icons/youtube.png';
+
 
 const Footer = () => {
     return (
@@ -51,9 +54,12 @@ const Footer = () => {
                     </Grid>
                     <Grid className="footer__column" item xs={12} lg={4}>
                         <div className="footer__social">
-                            <a className="footer__social__link" href="" target="_blank"><img className="footer__social__logo facebook" src={facebook} alt="Pinxitblue Facebook" /></a>
-                            <a className="footer__social__link" href="" target="_blank"><img className="footer__social__logo linkedin" src={linkedin} alt="Pinxitblue LinkedIn" /></a>
-                            <a className="footer__social__link" href="" target="_blank"><img className="footer__social__logo twitter" src={twitter} alt="Pinxitblue Twitter" /></a>
+                            <a className="footer__social__link" href="https://www.facebook.com/Pinxitblue/" target="_blank"><img className="footer__social__logo facebook" src={facebook} alt="Pinxitblue Facebook" /></a>
+                            <a className="footer__social__link" href="https://www.linkedin.com/company/pinxit-blue/" target="_blank"><img className="footer__social__logo linkedin" src={linkedin} alt="Pinxitblue LinkedIn" /></a>
+                            <a className="footer__social__link" href="https://www.instagram.com/pinxitblue/" target="_blank"><img className="footer__social__logo instagram" src={instagram} alt="Pinxitblue Instagram" /></a>
+                            <a className="footer__social__link" href="https://twitter.com/PinxitBlue" target="_blank"><img className="footer__social__logo twitter" src={twitter} alt="Pinxitblue Twitter" /></a>
+                            <a className="footer__social__link" href="https://www.youtube.com/channel/UC85bKzILFiyJJ_-pCbYWPYA" target="_blank"><img className="footer__social__logo youtube" src={youtube} alt="Pinxitblue Youtube" /></a>
+
                         </div>
                     </Grid>
                 </Grid>
