@@ -43,16 +43,16 @@ const Footer = () => {
                 </Grid>
 
                 <Grid className="footer__bottom" container spacing={6}>
-                    <Grid className="footer__column copyright" item xs={12} lg={4}>&copy; 2020 PinxitBlue</Grid>
-                    <Grid className="footer__column" item xs={12} lg={4}>
+                    <Grid className="footer__column copyright" item xs={12} lg={6}>&copy; 2020 PinxitBlue</Grid>
+                    {/*<Grid className="footer__column" item xs={12} lg={4}>
                         <ul className="footer__menu">
                             <li className="footer__menu__item">Home</li>
                             <li className="footer__menu__item">About Us</li>
                             <li className="footer__menu__item">Our Work</li>
                             <li className="footer__menu__item">Contact Us</li>
                         </ul>
-                    </Grid>
-                    <Grid className="footer__column" item xs={12} lg={4}>
+    </Grid>*/}
+                    <Grid className="footer__column" item xs={12} lg={6}>
                         <div className="footer__social">
                             <a className="footer__social__link" href="https://www.facebook.com/Pinxitblue/" target="_blank"><img className="footer__social__logo facebook" src={facebook} alt="Pinxitblue Facebook" /></a>
                             <a className="footer__social__link" href="https://www.linkedin.com/company/pinxit-blue/" target="_blank"><img className="footer__social__logo linkedin" src={linkedin} alt="Pinxitblue LinkedIn" /></a>
