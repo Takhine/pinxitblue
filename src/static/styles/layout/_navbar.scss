@@ -48,7 +48,18 @@
                 width: 28px;
             }
             @include xxxl{
-                width: 32px;
+                width: 28px;
+            }
+        }
+        img.cancel-button{
+            @include msm{
+                width: 25px;
+            }
+            @include xxl{
+                width: 18px;
+            }
+            @include xxxl{
+                width: 28px;
             }
         }
     }

@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
     Toolbar,
     AppBar,
@@ -8,8 +8,8 @@ import {
     IconButton,
     Drawer
 } from '@material-ui/core';
-
-import {NavLink} from 'react-router-dom';
+import NavMenu from './Menu';
+import { NavLink } from 'react-router-dom';
 import logoWhite from 'static/images/logo-white.svg';
 import logo from 'static/images/logo.svg';
 
@@ -37,40 +37,51 @@ const HideonScroll = (props) => {
 
 const Navbar = (props) => {
 
-    const [navBackground, setNavBackground] = useState(false)
+    const [navBackground, setNavBackground] = useState(false);
+    const [navMenu, setNavmenu] = useState(false);
     const navRef = useRef()
     navRef.current = navBackground
     useEffect(() => {
-      const handleScroll = () => {
-        const show = window.scrollY > 60
-        if (navRef.current !== show) {
-          setNavBackground(show)
+        const handleScroll = () => {
+            const show = window.scrollY > 60
+            if (navRef.current !== show) {
+                setNavBackground(show)
+            }
         }
-      }
-      document.addEventListener('scroll', handleScroll)
-      return () => {
-        document.removeEventListener('scroll', handleScroll)
-      }
+        document.addEventListener('scroll', handleScroll)
+        return () => {
+            document.removeEventListener('scroll', handleScroll)
+        }
     }, [])
-    
+
+    const openMenu = () =>{
+        setNavmenu(true);
+    }
+    useEffect(()=>{
+        console.log(navMenu);
+    },[navMenu])
     return (
-        <HideonScroll {...props}>
-            <AppBar
-                position="fixed"
-                style={{ backgroundColor: `${navBackground ? 'white' : 'transparent'}`, transition:'1s ease' }}
-                id="navbar"
-            >
-                <Toolbar>
+        <>
+            {navMenu!==true &&
+                <HideonScroll {...props}>
+                <AppBar
+                    position="fixed"
+                    style={{ backgroundColor: `${navBackground ? 'white' : 'transparent'}`, transition: '1s ease' }}
+                    id="navbar"
+                >
+                    <Toolbar>
+                        <NavLink exact to="/"><Button className="logo-container"><img style={{ transition: '1s ease' }} className="logo" width="200" height="auto" src={navBackground ? logo : logoWhite} alt="Pinxitblue" /></Button></NavLink>
+                        <div className="grow" />
+                        <IconButton onClick={openMenu} edge="start" className="menu-button" color="inherit" aria-label="menu">
+                            <img src={menu} width="25" alt="Menu Burger" />
+                        </IconButton>
+                    </Toolbar>
+                </AppBar>
+            </HideonScroll>
+            }
+            <NavMenu setNavmenu={setNavmenu} navMenu={navMenu} />
 
-                    <NavLink exact to="/"><Button className="logo-container"><img style={{transition:'1s ease'}} className="logo" width="200" height="auto" src={navBackground?logo:logoWhite} alt="Pinxitblue" /></Button></NavLink>
-                    <div className="grow" />
-                    <IconButton edge="start" className="menu-button" color="inherit" aria-label="menu">
-                    <img src={menu} width="25" alt="Menu Burger" />
-                </IconButton>
-
-                </Toolbar>
-            </AppBar>
-        </HideonScroll>
+        </>
     );
 }
 export default Navbar;

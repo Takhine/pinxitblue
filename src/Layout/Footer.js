@@ -2,7 +2,6 @@ import React from 'react';
 
 import {
     Grid,
-    Icon
 } from '@material-ui/core';
 
 import facebook from 'static/images/icons/facebook.png';
@@ -10,7 +9,7 @@ import linkedin from 'static/images/icons/linkedin.png';
 import twitter from 'static/images/icons/twitter.png';
 import instagram from 'static/images/icons/instagram.png';
 import youtube from 'static/images/icons/youtube.png';
-
+import affiliation from 'static/images/one-agent.png';
 
 const Footer = () => {
     return (
@@ -37,7 +36,7 @@ const Footer = () => {
                     <Grid className="footer__column" item xs={12} md={4}>
                         <h2 className="footer__column__title">Global Affiliation</h2>
                         <section className="footer__column__content">
-                            {/*<img src={affiliation} alt="Global Affiliation" />*/}
+                          <img src={affiliation} alt="Global Affiliation" />
                         </section>
                     </Grid>
                 </Grid>
