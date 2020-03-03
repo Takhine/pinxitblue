@@ -48,6 +48,15 @@ const Navbar = (props) => {
                 setNavBackground(show)
             }
         }
+        let bod= document.getElementsByTagName('BODY')[0];
+        let htm= document.getElementsByTagName('html');
+        
+        if(navMenu){
+            bod.style.overflow='hidden';
+        }
+        else{
+            bod.style.overflow='unset';
+        }
         document.addEventListener('scroll', handleScroll)
         return () => {
             document.removeEventListener('scroll', handleScroll)

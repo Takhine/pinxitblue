@@ -17,7 +17,6 @@ export default function Menu(props) {
         <div className={props.navMenu ? "main-menu" : "hidden-menu"}>
             <AppBar
                 position="fixed"
-                style={{ backgroundColor: 'transparent', boxShadow: 'none' }}
                 id="navbar"
             >
                 <Toolbar>

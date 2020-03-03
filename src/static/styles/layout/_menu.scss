@@ -1,5 +1,9 @@
 .main-menu{
-    position: fixed;
+    top: 0;
+    bottom:0;
+    position:fixed;
+    overflow-y:scroll;
+    overflow-x:hidden;
     height: auto;
     @include md{
         height: 100vh;
@@ -9,6 +13,11 @@
     transition: ease-in 0.4s all;
     z-index: 2000;
     background-color: $primary-black;
+    #navbar{
+        background-color: $primary-black;
+        box-shadow: none;
+        margin-right: 10px;
+    }
     .contact-form{
         @extend .container;
         margin-top: 12px;
