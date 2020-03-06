@@ -16,6 +16,9 @@ import c11 from 'static/images/logos/11.png';
 import c12 from 'static/images/logos/12.png';
 import c13 from 'static/images/logos/13.png';
 import c14 from 'static/images/logos/14.png';
+import c15 from 'static/images/logos/15.png';
+import c16 from 'static/images/logos/16.png';
+
 
 const clients = [
     {
@@ -40,7 +43,8 @@ const clients = [
     },
     {
         id: 6,
-        img: c6
+        img: c6,
+        size: true
     },
     {
         id: 7,
@@ -71,7 +75,18 @@ const clients = [
     },
     {
         id: 14,
-        img: c14
+        img: c14,
+        size: true
+    },
+    {
+        id: 15,
+        img: c15,
+        size: true
+
+    },
+    {
+        id: 16,
+        img: c16
     }
 ]
 
@@ -91,7 +106,7 @@ const Clients = () => {
                     return (
                         <Grid className="clients__grid" key={client.id} item xs={6} sm={4} lg={3}>
                             <div className="clients__grid__child">
-                                <img className="clients__logo" src={client.img} alt={client.img} />
+                                <img className={client.size? "clients__logo size":"clients__logo"}  src={client.img} alt={client.img} />
                             </div>
                         </Grid>
                     );

@@ -1,9 +1,6 @@
 .carousel{
     overflow: hidden;
     margin-bottom: -7px;
-    @include msm{
-        margin-bottom: unset;
-    }
     .slick-slider{
         .slick-arrow{
             &.slick-prev{
