@@ -10,6 +10,7 @@ import {
 } from '@material-ui/core';
 import NavMenu from './Menu';
 import { NavLink } from 'react-router-dom';
+import {useMediaQuery} from 'react-responsive';
 import logoWhite from 'static/images/logo-white.svg';
 import logo from 'static/images/logo.svg';
 
@@ -39,6 +40,8 @@ const Navbar = (props) => {
 
     const [navBackground, setNavBackground] = useState(false);
     const [navMenu, setNavmenu] = useState(false);
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 600px)' })
+
     const navRef = useRef()
     navRef.current = navBackground
     useEffect(() => {
@@ -75,11 +78,11 @@ const Navbar = (props) => {
                 <HideonScroll {...props}>
                 <AppBar
                     position="fixed"
-                    style={{ backgroundColor: `${navBackground ? 'white' : 'transparent'}`, transition: '1s ease' }}
+                    style={{ backgroundColor: `${navBackground ? 'white' :isTabletOrMobile? 'white':'transparent'}`, transition: '1s ease' }}
                     id="navbar"
                 >
                     <Toolbar>
-                        <NavLink exact to="/"><Button className="logo-container"><img style={{ transition: '1s ease' }} className="logo" width="200" height="auto" src={navBackground ? logo : logoWhite} alt="Pinxitblue" /></Button></NavLink>
+                        <NavLink exact to="/"><Button className="logo-container"><img style={{ transition: '1s ease' }} className="logo" width="200" height="auto" src={navBackground  ? logo :isTabletOrMobile? logo:logoWhite} alt="Pinxitblue" /></Button></NavLink>
                         <div className="grow" />
                         <IconButton onClick={openMenu} edge="start" className="menu-button" color="inherit" aria-label="menu">
                             <img src={menu} width="25" alt="Menu Burger" />

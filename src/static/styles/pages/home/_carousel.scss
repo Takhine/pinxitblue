@@ -1,19 +1,29 @@
 .carousel{
     overflow: hidden;
+    margin-bottom: -7px;
+    @include msm{
+        margin-bottom: unset;
+    }
     .slick-slider{
         .slick-arrow{
             &.slick-prev{
                 left: 20px;
                 &::before{
                     content: url('../../../images/icons/back-arrow.svg');
-                    font-size: 32px;
+                    font-size: 20px;
+                    @include msm{
+                        font-size: 32px;
+                    }
                 }
             }
             &.slick-next{
                 right: 30px;
                 &::before{
                     content: url('../../../images/icons/front-arrow.svg');
-                    font-size: 32px;
+                    font-size: 20px;
+                    @include msm{
+                        font-size: 32px;
+                    }
                 }
             }
     }
@@ -37,14 +47,27 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 50%;
         height: inherit;
         top: -7px;
         @extend .container;
-        position: absolute;
+        position: relative;
+        width: 100%;
+        text-align: center;
+        background-color: red;;
+        @include msm{
+            position: absolute;
+            background-color: unset;
+            width: 50%;
+            text-align: unset;
+        }
         color: white;
         &.google-slide{
-            color: #383330;
+            color: white;
+            background-color: $google;
+            @include msm{
+                color: #383330;
+                background-color: transparent;
+            }
             .carousel__overlay__title{
                 @include xxl{
                     max-width: 430px;
@@ -52,14 +75,66 @@
             }
             .carousel__overlay__description{
                 max-width: 290px;
+                margin: auto;
+                @include msm{
+                    margin: unset;
+                }
             }
         }
         &.barclays-slide{
             color: white;
+            background-color: $barclays;
+            @include msm{
+                background-color: transparent;
+            }
         }
         &.bharat-petroleum-slide{
-            background-color: #00196485;
-            color: white;
+            background-color: $bharat-petroleum;
+            @include msm{
+                background-color: transparent;
+            }
+        }
+        &.deal-jeans-slide{
+            background-color: $deal-jeans;
+            @include msm{
+                background-color: transparent;
+            }
+        }
+        &.tuscan-verve-slide{
+            background-color: $tuscan-verve;
+            @include msm{
+                background-color: transparent;
+            }
+        }
+        &.anmol-slide{
+            background-color: $anmol;
+            @include msm{
+                background-color: transparent;
+            }
+        }
+        &.gemfield-slide{
+            background-color: $gemfield;
+            @include msm{
+                background-color: transparent;
+            }
+        }
+        &.talvalkar-slide{
+            background-color: $talvalkar;
+            @include msm{
+                background-color: transparent;
+            }
+        }
+        &.toi-slide{
+            background-color: $toi;
+            @include msm{
+                background-color: transparent;
+            }
+        }
+        &.golden-chariot-slide{
+            background-color: $golden-chariot;
+            @include msm{
+                background-color: transparent;
+            }
         }
         &__title{
             font-size: $title-font;
