@@ -1,0 +1,64 @@
+.videos-container {
+    background-color: $primary-black;
+    color: white;
+    padding: 5%;
+}
+
+
+.videos{
+
+    &__title{
+        margin-bottom: 32px;
+        @include xl{
+            margin-bottom: 40px;
+        }
+        &__heading{
+            text-align: start;
+            text-transform: uppercase;
+            font-size: $default-font;
+            @include md{
+                font-size: $large-font;
+            }
+        }
+        &__subheading {
+            text-align: start;
+            font-size: $default-font;
+            @include md {
+                font-size: $title-font;
+            }
+        }
+    }
+    &__grid{
+        &__child{
+            text-align: start;
+            margin-bottom: 12px;
+            @include xl{
+                margin-bottom: 26px;
+            }
+            @include xxl{
+                margin-bottom: 52px;
+            }
+            @include xxxl{
+                margin-bottom: 60px;
+            }
+        }
+    }
+    &__thumbnail{
+        width: calc(100% - 15px);
+        max-width: 290px;
+        @include msm{
+            max-width: 290px;
+        }
+        @include lg{
+            max-width: 350px;
+        }
+        &.size{
+            @include msm{
+                max-width: 240px;
+            }
+            @include lg{
+                max-width: 270px;
+            }
+        }
+    }
+}
