@@ -9,7 +9,8 @@ const VideoModal = React.forwardRef((props, ref) => {
                 ref={ref}
                 style={{
                     position: "fixed",
-                    paddingBottom: "50%",
+
+                    paddingBottom: "50%" /* 16:9 */,
                     paddingTop: 25,
                     height: 0
                 }}

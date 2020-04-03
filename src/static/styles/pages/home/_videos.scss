@@ -1,0 +1,80 @@
+.videos-container {
+    background-color: $primary-black;
+    color: white;
+    padding: 5%;
+}
+
+
+.videos{
+
+    &__title{
+        margin-bottom: 32px;
+        cursor: pointer;
+        margin-left: 8px;
+        margin-top: 12px;
+        @include xl{
+            margin-bottom: 40px;
+        }
+        &__heading{
+            text-transform: uppercase;
+            font-size: $default-font;
+            text-align: center;
+            @include md{
+                font-size: $large-font;
+                text-align: start;
+            }
+        }
+        &__subheading {
+            cursor: pointer;
+            font-size: $default-font;
+            text-align: center;
+            font-weight: 400;
+            @include md {
+                font-size: $default-font;
+                text-align: start;
+            }
+        }
+    }
+    &__grid{
+        display: flex;
+        justify-content: center;
+        &__child{
+            text-align: start;
+            margin-bottom: 12px;
+            @include xl{
+                margin-bottom: 26px;
+            }
+            @include xxl{
+                margin-bottom: 52px;
+            }
+            @include xxxl{
+                margin-bottom: 60px;
+            }
+        }
+    }
+    &__thumbnail{
+        display: block;
+        cursor: pointer;
+        margin: auto;
+        width: calc(100% - 15px);
+        max-width: 290px;
+        @include msm{
+            max-width: 290px;
+        }
+        @include lg{
+            max-width: 450px;
+        }
+        &.size{
+            @include msm{
+                max-width: 240px;
+            }
+            @include lg{
+                max-width: 270px;
+            }
+        }
+    }
+}
+
+.modal-dialog{
+    outline: none;
+}
