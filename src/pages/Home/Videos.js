@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Grid } from '@material-ui/core';
-import Modal from '@material-ui/core/Modal';
+import {
+    Modal,
+    Grid,
+    DialogContent
+} from '@material-ui/core';
 import ReactPlayer from 'react-player';
-import { makeStyles } from '@material-ui/core/styles';
 
 import deal from 'static/images/thumbnails/dealaw18.PNG';
 import rextraut from 'static/images/thumbnails/rextraut.PNG';
@@ -28,7 +30,7 @@ const videos = [
         thumbnail: rextraut,
         title: 'Rexstraut',
         caption: 'The Urban Drifter',
-        ytid: 'text'
+        ytid: 'a8FA91pTOmE'
     },
 
     {
@@ -65,18 +67,24 @@ const videos = [
 ]
 
 export default function Videos() {
-
-    const [modal, openModal] = useState(false);
-    const [yid, setYid] = useState(null);
-    
+    const [modal, setModal] = useState({
+        yid: null,
+        open: false
+    })
     const handleOpen = (ytid) => () => {
-        openModal(true);
-        setYid(ytid);
+        setModal({
+            ...modal,
+            yid: ytid,
+            open: true
+        })
     };
 
     const handleClose = () => {
-        setYid(null);
-        openModal(false);
+        setModal({
+            ...modal,
+            yid: null,
+            open: false
+        })
     };
 
     return (
@@ -84,11 +92,12 @@ export default function Videos() {
             <Modal
                 aria-labelledby="simple-modal-title"
                 aria-describedby="simple-modal-description"
-                open={modal}
+                open={modal.open}
                 onClose={handleClose}
             >
-
-                <VideoModal className="modal_styles" youtubeId={yid} />
+                <DialogContent className="modal-dialog">
+                    <VideoModal className="modal_styles" youtubeId={modal.yid} />
+                </DialogContent>
             </Modal>
 
             <Grid container spacing={2} direction="row" alignItems="center">
@@ -97,7 +106,7 @@ export default function Videos() {
                     return (
                         <Grid className="videos__grid" key={video.id} item xs={12} sm={6} lg={4} onClick={handleOpen(video.ytid)} >
                             <div className="videos__grid__child">
-                                <img className={video.size ? "videos__thumbnail size" : "videos__thumbnail"} src={video.thumbnail} alt={video.thumbnail} />
+                                <img className={video.size ? "videos__thumbnail size" : "videos__thumbnail"} src={video.thumbnail} alt={video.caption} />
                                 <div className="videos__title">
                                     <h2 className="videos__title__heading">
                                         {video.title}

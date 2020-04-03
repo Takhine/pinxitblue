@@ -11,10 +11,8 @@ const Home = () => {
     return (
         <div className="home">
             <Carousel />
-
-            <Videos />
-
             <Youtube youtubeId={'mLyksAFzw5U?controls=0&showinfo=0'} />
+            <Videos />
             <Clients />
             <Message />
         </div>

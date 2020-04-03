@@ -1,38 +1,59 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import ReactPlayer from 'react-player'
-
+import {
+    ClickAwayListener
+} from '@material-ui/core';
 import thumbnail from 'static/images/thumbnail.PNG';
+
 export default ({ youtubeId }) => {
 
-    const [play, setPlay] = useState(false);
+    const [player, setPlay] = useState({
+        play:false,
+        ready:false
+    });
     return (
-        <div
-            className="video"
-            style={{
-                position: "relative",
-                paddingBottom: "56.25%" /* 16:9 */,
-                paddingTop: 25,
-                height: 0
-            }}
-        >
-            <ReactPlayer
-                onReady={()=>setPlay(true)}
+        <ClickAwayListener onClickAway={() => setPlay(false)}>
+            <div
+                className="video"
                 style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%"
+                    position: "relative",
+                    paddingBottom: "56.25%" /* 16:9 */,
+                    paddingTop: 25,
+                    height: 0
                 }}
-                height="100%"
-                width="100%"
-                url={`https://www.youtube.com/watch?v=${youtubeId}`}
-                controls={false}
-                light={thumbnail}
-                playIcon={null}
-                playing={play}
-            />
+            >
+                <ReactPlayer
+                    onReady={() => {
+                        if(player.ready!==true){
+                            setPlay({...player, play: true, ready: true})
+                        }
+                    }}
+                    onPlay={()=>setPlay({
+                        ...player,
+                        play: true
+                    })}
+                    onPause={()=>setPlay({
+                        ...player,
+                        play: false
+                    })}
+                    style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%"
+                    }}
+                    height="100%"
+                    width="100%"
+                    url={`https://www.youtube.com/watch?v=${youtubeId}`}
+                    controls={false}
+                    light={thumbnail}
+                    playIcon={null}
+                    playing={player.play}
+                />
 
-        </div>
+            </div>
+        </ClickAwayListener>
+
     );
 };
